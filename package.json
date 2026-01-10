@@ -1,0 +1,12 @@
+{
+    "dependencies": {
+        "@paowa-bot/core": "github:humxc/paowa-bot",
+        "react": "^19.2.3",
+        "satori": "^0.18.3",
+        "zod": "^4.3.5"
+    },
+    "devDependencies": {
+        "@types/react": "^19.2.8",
+        "bun-types": "^1.3.5"
+    }
+}

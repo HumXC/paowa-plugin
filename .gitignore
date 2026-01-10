@@ -1,0 +1,6 @@
+.direnv
+.envrc
+node_modules
+.env
+cache
+config

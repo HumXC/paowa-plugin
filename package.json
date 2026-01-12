@@ -1,6 +1,8 @@
 {
     "dependencies": {
-        "@paowa-bot/core": "github:humxc/paowa-bot",
+        "@paowa-bot/core": "../paowa-bot",
+        "http-node": "^1.2.0",
+        "isomorphic-git": "^1.36.1",
         "react": "^19.2.3",
         "satori": "^0.18.3",
         "zod": "^4.3.5"

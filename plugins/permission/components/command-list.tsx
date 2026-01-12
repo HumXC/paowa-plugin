@@ -91,21 +91,21 @@ export const CommandList: React.FC<CommandListProps> = ({ commands }) => {
                             >
                                 {cmd.name}
                             </span>
-                                <span
-                                    style={{
-                                        fontSize: "18px",
-                                        fontWeight: "600",
-                                        color: "#3498db",
-                                        backgroundColor: "#ebf5fb",
-                                        padding: "6px 16px",
-                                        borderRadius: "20px",
-                                        border: "1px solid #d6eaf8",
-                                    }}
-                                >
-                                    {typeof cmd.permission === "object" && cmd.permission.level
-                                        ? cmd.permission.level
-                                        : "user"}
-                                </span>
+                            <span
+                                style={{
+                                    fontSize: "18px",
+                                    fontWeight: "600",
+                                    color: "#3498db",
+                                    backgroundColor: "#ebf5fb",
+                                    padding: "6px 16px",
+                                    borderRadius: "20px",
+                                    border: "1px solid #d6eaf8",
+                                }}
+                            >
+                                {typeof cmd.permission === "object" && cmd.permission.level
+                                    ? cmd.permission.level
+                                    : "user"}
+                            </span>
                         </div>
                         <div
                             style={{

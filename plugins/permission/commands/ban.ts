@@ -1,7 +1,8 @@
 import { createCommand } from "@paowa-bot/core";
-import { Manager } from ".";
+import { PermissionPlugin } from "../index";
 import z from "zod";
-export default function ban(m: Manager) {
+
+export default function ban(plugin: PermissionPlugin) {
     return [
         createCommand({
             name: "ban user <id>",
@@ -9,7 +10,7 @@ export default function ban(m: Manager) {
             permission: "owner",
             args: z.coerce.number().int().positive(),
             handler: async (ctx, id) => {
-                m.bot.permission.addToGlobalBlacklist(id, "user");
+                plugin.manager.addToGlobalBlacklist(id, "user");
                 ctx.reply.text(`已拉黑用户: ${id}`).commit();
             },
         }),
@@ -19,7 +20,7 @@ export default function ban(m: Manager) {
             permission: "owner",
             args: z.coerce.number().int().positive(),
             handler: async (ctx, id) => {
-                m.bot.permission.removeFromGlobalBlacklist(id, "user");
+                plugin.manager.removeFromGlobalBlacklist(id, "user");
                 ctx.reply.text(`已取消拉黑用户: ${id}`).commit();
             },
         }),
@@ -29,7 +30,7 @@ export default function ban(m: Manager) {
             permission: "admin",
             args: z.coerce.number().int().positive(),
             handler: async (ctx, id) => {
-                m.bot.permission.addToGlobalBlacklist(id, "group");
+                plugin.manager.addToGlobalBlacklist(id, "group");
                 ctx.reply.text(`已拉黑群: ${id}`).commit();
             },
         }),
@@ -39,7 +40,7 @@ export default function ban(m: Manager) {
             permission: "admin",
             args: z.coerce.number().int().positive(),
             handler: async (ctx, id) => {
-                m.bot.permission.removeFromGlobalBlacklist(id, "group");
+                plugin.manager.removeFromGlobalBlacklist(id, "group");
                 ctx.reply.text(`已取消拉黑群: ${id}`).commit();
             },
         }),
